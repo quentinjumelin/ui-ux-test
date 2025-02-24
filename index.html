@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Odoo UI/UX Designer Exercise</title>
+        <link rel="stylesheet" href="./css/custom.css" />
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    </head>
+    <body class="container m-3">
+        <div class="card">
+            <div class="card-header pt-2 bg-dark">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item me-2" role="presentation">
+                        <a class="nav-link active" id="tab-1" data-bs-toggle="tab" data-bs-target="#tab-1-pane" role="tab" aria-controls="tab-1-pane" aria-selected="true">Tab 1</a>
+                    </li>
+                    <li class="nav-item me-2" role="presentation">
+                        <a class="nav-link" id="tab-2" data-bs-toggle="tab" data-bs-target="#tab-2-pane" role="tab" aria-controls="tab-2-pane" aria-selected="false">Tab 2</a>
+                    </li>
+                    <li class="nav-item me-2" role="presentation">
+                        <a class="nav-link" id="tab-3" data-bs-toggle="tab" data-bs-target="#tab-3-pane" role="tab" aria-controls="tab-3-pane" aria-selected="false">Tab 3</a>
+                    </li>
+                    <li class="nav-item me-2" role="presentation">
+                        <a class="nav-link disabled text-light" disabled>Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body tab-content p-0" id="myTabContent">
+                <div class="tab-pane show active" id="tab-1-pane" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+                    <div class="tab-pane-header p-3">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle text-secondary mb-2">Card subtitle</h6>
+                    </div>
+                    <div class="row border-top">
+                        <ul class="list-group list-group-flush col-md-6 col-12" id="myTab" role="tablist">
+                            <li class="list-group-item flex-fill d-flex">
+                                <button class="nav-link active" id="item-1" data-bs-toggle="tab" data-bs-target="#item-1-pane" type="button" role="item" aria-controls="item-1-pane" aria-selected="true">item 1</button>
+                            </li>
+                            <li class="list-group-item flex-fill d-flex">
+                                <button class="nav-link" id="item-2" data-bs-toggle="tab" data-bs-target="#item-2-pane" type="button" role="item" aria-controls="item-2-pane" aria-selected="false">item 2</button>
+                            </li>
+                            <li class="list-group-item flex-fill d-flex border-bottom">
+                                <button class="nav-link" id="item-3" data-bs-toggle="tab" data-bs-target="#item-3-pane" type="button" role="item" aria-controls="item-3-pane" aria-selected="false">item 3</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content col-md-6 col-12" id="myTabContent">
+                            <div class="tab-pane show active" id="item-1-pane" role="tabpanel" aria-labelledby="item-1" tabindex="0">
+                                <img src="https://placehold.co/600x400/blue/white?font=open-sans&text=Pic-1" class="img-fluid p-0" alt="pic-1" />
+                            </div>
+                            <div class="tab-pane" id="item-2-pane" role="tabpanel" aria-labelledby="item-2" tabindex="0">
+                                <img src="https://placehold.co/600x400/yellow/black?font=open-sans&text=Pic-2" class="img-fluid p-0" alt="pic-2" />
+                            </div>
+                            <div class="tab-pane" id="item-3-pane" role="tabpanel" aria-labelledby="item-3" tabindex="0">
+                                <img src="https://placehold.co/600x400/black/white?font=open-sans&text=Pic-3" class="img-fluid p-0" alt="pic-3" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane p-5" id="tab-2-pane" role="tabpanel" aria-labelledby="tab-2" tabindex="0">
+                    <div class="tab-loading d-flex flex-column align-items-center">
+                        <p>Loading...</p>
+                        <svg width="15%" height="15%" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><style>.spinner{transform-origin:center;animation:spinner-animation .75s infinite linear}@keyframes spinner-animation{100%{transform:rotate(360deg)}}</style><path d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z" class="spinner"/></svg>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-3-pane" role="tabpanel" aria-labelledby="tab-3" tabindex="0">
+                    <div class="card border-0">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="https://placehold.co/400/red/white?font=open-sans&text=IMAGE" class="img-fluid w-100" alt="IMAGE">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body p-3">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <p class="card-footer card-text text-light bg-dark px-3 py-2">2 days ago</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+// Default variable overrides
+$spacer: 20px;
+$card-spacer-y: 0px;
+$card-spacer-x: 0px;
+$card-cap-padding-x: $spacer;
+$grid-gutter-width: 0px;
+$enable-rounded: false;
+$nav-link-padding-x: 20px;
+$container-max-widths: (
+  sm: 540px,
+  md: 600px,
+);
+
+// import all bootstrap's scss
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Because only .nav-link.active state has a bg-color variable assigned 
+// It seemed more efficient to override in this case rather than using utility classes
+.card-header-tabs {
+    .nav-link {
+        background-color: $gray-300;
+        color: currentColor;
+        cursor: pointer;
+
+        // This could easily be achieved with a .bg-gray-600 and .text-light on the disabled link
+        &.disabled {
+            background-color: $gray-600;
+            color: $white;
+        }
+    }
+}

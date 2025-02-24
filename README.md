@@ -1,2 +1,3 @@
-# ui-ux-test
-UI/UX Designer Test Exercise
+# UI/UX Designer Test Exercise
+
+The result is visible online [here](http://odoo.qjumelin.com).
