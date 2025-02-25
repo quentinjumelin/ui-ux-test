@@ -7,43 +7,27 @@ $card-spacer-y: 0px;
 $card-spacer-x: 0px;
 $card-cap-padding-x: $spacer;
 $grid-gutter-width: 0px;
-$enable-rounded: true;
+$enable-rounded: false;
 $nav-link-padding-x: 20px;
 $container-max-widths: (
   sm: 540px,
   md: 600px,
 );
-$primary: #6610f2;
-$secondary: #DCDCDC;
 
 @import "../node_modules/bootstrap/scss/variables";
+
+// Variant C mixin
+@each $color, $value in $theme-colors {
+    .custom-#{$color} {
+        color: color-contrast($value) if($enable-important-utilities, !important, null);
+        background-color: lighten(desaturate(adjust-hue($value, 20), 50.70), 10.20) if($enable-important-utilities, !important, null);
+    }
+}
+
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
 @import "../node_modules/bootstrap/scss/utilities";
-
-// Generating background-color utilities
-// https://getbootstrap.com/docs/5.2/customize/color/#generating-utilities
-
-$all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans);
-
-$utilities: map-merge(
-  $utilities,
-  (
-    "background-color": map-merge(
-      map-get($utilities, "background-color"),
-      (
-        values: map-merge(
-          map-get(map-get($utilities, "background-color"), "values"),
-          (
-            $all-colors
-          ),
-        ),
-      ),
-    ),
-  )
-);
-
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/nav";
@@ -61,22 +45,51 @@ $utilities: map-merge(
 .card-header-tabs {
     .nav-link {
         cursor: pointer;
-        &.text-primary:not(.active),
-        &.disabled  {
-            background-color: color.scale($white, $lightness: -10%);
-        }
     }
 }
 
-#tab-1-pane .list-group-item:first-child {
-    border-top-right-radius: unset;
-}
+// Variant C
+.card[class*="custom-"] {
+    color: inherit;
 
-#tab-1-pane .list-group-item:last-child {
-    border-bottom-right-radius: unset;
-}
+    .card-header {
+        background-color: rgba(0,0,0,0.1);
+    }
 
-#tab-1-pane .rounded-end,
-#tab-3-pane > .card > .row {
-    overflow: hidden;
+    .card-header .nav-link {
+        background-color: rgba(0,0,0,0.25);
+        color: inherit;
+    }
+
+    .card-header .nav-link.active {
+        background-color: rgba(0,0,0,0.15);
+        border-color: transparent;
+    }
+
+    .nav-link {
+        color: inherit;
+    }
+    
+    .nav-link.disabled {
+        background-color: rgba(0,0,0,0.5);
+    }
+    
+    .tab-pane-header + .row {
+        border-top: var(--bs-border-width) var(--bs-border-style) currentColor;
+    }
+
+    .list-group-item {
+        border-color: currentColor;
+        background-color: transparent;
+        color: inherit;
+    }
+
+    .card {
+        background-color: transparent;
+        color: currentColor;
+    }
+
+    .card-footer {
+        border-color: currentColor;
+    }
 }
