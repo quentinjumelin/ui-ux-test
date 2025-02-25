@@ -9,30 +9,30 @@
     </head>
     <body class="container m-3">
         <div class="card">
-            <div class="card-header pt-2 bg-dark">
+            <div class="card-header bg-indigo-500 pt-2">
                 <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                     <li class="nav-item me-2" role="presentation">
-                        <a class="nav-link active" id="tab-1" data-bs-toggle="tab" data-bs-target="#tab-1-pane" role="tab" aria-controls="tab-1-pane" aria-selected="true">Tab 1</a>
+                        <a class="nav-link text-primary active" id="tab-1" data-bs-toggle="tab" data-bs-target="#tab-1-pane" role="tab" aria-controls="tab-1-pane" aria-selected="true">Tab 1</a>
                     </li>
                     <li class="nav-item me-2" role="presentation">
-                        <a class="nav-link" id="tab-2" data-bs-toggle="tab" data-bs-target="#tab-2-pane" role="tab" aria-controls="tab-2-pane" aria-selected="false">Tab 2</a>
+                        <a class="nav-link text-primary" id="tab-2" data-bs-toggle="tab" data-bs-target="#tab-2-pane" role="tab" aria-controls="tab-2-pane" aria-selected="false">Tab 2</a>
                     </li>
                     <li class="nav-item me-2" role="presentation">
-                        <a class="nav-link" id="tab-3" data-bs-toggle="tab" data-bs-target="#tab-3-pane" role="tab" aria-controls="tab-3-pane" aria-selected="false">Tab 3</a>
+                        <a class="nav-link text-primary" id="tab-3" data-bs-toggle="tab" data-bs-target="#tab-3-pane" role="tab" aria-controls="tab-3-pane" aria-selected="false">Tab 3</a>
                     </li>
                     <li class="nav-item me-2" role="presentation">
-                        <a class="nav-link disabled text-light" disabled>Disabled</a>
+                        <a class="nav-link text-primary disabled opacity-75" disabled>Disabled</a>
                     </li>
                 </ul>
             </div>
             <div class="card-body tab-content p-0" id="myTabContent">
                 <div class="tab-pane show active" id="tab-1-pane" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
-                    <div class="tab-pane-header p-3">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle text-secondary mb-2">Card subtitle</h6>
+                    <div class="tab-pane-header px-3 py-4">
+                        <h5 class="card-title text-primary">Card title</h5>
+                        <h6 class="card-subtitle mb-2">Card subtitle</h6>
                     </div>
-                    <div class="row border-top">
-                        <ul class="list-group list-group-flush col-md-6 col-12" id="myTab" role="tablist">
+                    <div class="row bg-secondary border-top p-3">
+                        <ul class="list-group col-md-6 col-12" id="myTab" role="tablist">
                             <li class="list-group-item flex-fill d-flex">
                                 <button class="nav-link active" id="item-1" data-bs-toggle="tab" data-bs-target="#item-1-pane" type="button" role="item" aria-controls="item-1-pane" aria-selected="true">item 1</button>
                             </li>
@@ -43,7 +43,7 @@
                                 <button class="nav-link" id="item-3" data-bs-toggle="tab" data-bs-target="#item-3-pane" type="button" role="item" aria-controls="item-3-pane" aria-selected="false">item 3</button>
                             </li>
                         </ul>
-                        <div class="tab-content col-md-6 col-12" id="myTabContent">
+                        <div class="tab-content rounded-end col-md-6 col-12" id="myTabContent">
                             <div class="tab-pane show active" id="item-1-pane" role="tabpanel" aria-labelledby="item-1" tabindex="0">
                                 <img src="https://placehold.co/600x400/blue/white?font=open-sans&text=Pic-1" class="img-fluid p-0" alt="pic-1" />
                             </div>
@@ -63,10 +63,10 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="tab-3-pane" role="tabpanel" aria-labelledby="tab-3" tabindex="0">
-                    <div class="card border-0">
-                        <div class="row g-0">
+                    <div class="card border-0 p-3">
+                        <div class="row border rounded shadow g-0">
                           <div class="col-md-4">
-                            <img src="https://placehold.co/400/red/white?font=open-sans&text=IMAGE" class="img-fluid w-100" alt="IMAGE">
+                            <img src="https://placehold.co/400/red/white?font=open-sans&text=IMAGE" class="img-fluid w-100 h-100" alt="IMAGE">
                           </div>
                           <div class="col-md-8">
                             <div class="card-body p-3">
@@ -78,7 +78,7 @@
                         </div>
                       </div>
                 </div>
-                <p class="card-footer card-text text-light bg-dark px-3 py-2">2 days ago</p>
+                <p class="card-footer card-text bg-blue-500 text-light px-3 py-2">2 days ago</p>
             </div>
         </div>
     </body>

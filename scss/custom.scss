@@ -1,31 +1,82 @@
+@use 'sass:color';
+@import "../node_modules/bootstrap/scss/functions";
+
 // Default variable overrides
 $spacer: 20px;
 $card-spacer-y: 0px;
 $card-spacer-x: 0px;
 $card-cap-padding-x: $spacer;
 $grid-gutter-width: 0px;
-$enable-rounded: false;
+$enable-rounded: true;
 $nav-link-padding-x: 20px;
 $container-max-widths: (
   sm: 540px,
   md: 600px,
 );
+$primary: #6610f2;
+$secondary: #DCDCDC;
 
-// import all bootstrap's scss
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/utilities";
 
-// Because only .nav-link.active state has a bg-color variable assigned 
-// It seemed more efficient to override in this case rather than using utility classes
+// Generating background-color utilities
+// https://getbootstrap.com/docs/5.2/customize/color/#generating-utilities
+
+$all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "background-color"), "values"),
+          (
+            $all-colors
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/card";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/list-group";
+@import "../node_modules/bootstrap/scss/transitions";
+// ... 
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// custom styles
 .card-header-tabs {
     .nav-link {
-        background-color: $gray-300;
-        color: currentColor;
         cursor: pointer;
-
-        // This could easily be achieved with a .bg-gray-600 and .text-light on the disabled link
-        &.disabled {
-            background-color: $gray-600;
-            color: $white;
+        &.text-primary:not(.active),
+        &.disabled  {
+            background-color: color.scale($white, $lightness: -10%);
         }
     }
+}
+
+#tab-1-pane .list-group-item:first-child {
+    border-top-right-radius: unset;
+}
+
+#tab-1-pane .list-group-item:last-child {
+    border-bottom-right-radius: unset;
+}
+
+#tab-1-pane .rounded-end,
+#tab-3-pane > .card > .row {
+    overflow: hidden;
 }
